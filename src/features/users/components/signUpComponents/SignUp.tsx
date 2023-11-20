@@ -13,6 +13,7 @@ import SignInUpButton from "./SignInUpButton";
 import PasswordInput from "./PasswordInput";
 import EmailInput from "./EmailInput";
 import ConfirmPasswordInputIn from "./ConfirmPasswordInput";
+import { useState } from "react";
 
 export const SignUp = () => {
   const {
@@ -23,6 +24,13 @@ export const SignUp = () => {
   const onSubmit = (event: FieldValues) => {
     event.preventDefault();
   };
+
+  const [email, setEmail] = useState<string>();
+
+  const handleEmailChange = (email: string) => {
+    setEmail(email);
+  };
+
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -51,6 +59,7 @@ export const SignUp = () => {
               register={register}
               errors={errors}
               emailValidet={emailValidet}
+              onEmailChange={handleEmailChange}
             />
             <PasswordInput
               register={register}

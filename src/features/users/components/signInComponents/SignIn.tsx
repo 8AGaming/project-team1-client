@@ -60,6 +60,7 @@ export const SignIn = () => {
           <FooterSignIn isValid={isValid} />
           <SignInLink text="signUp" />
           {/* <SignUp /> */}
+          <a />
         </Box>
       </Box>
       <Copyright />
